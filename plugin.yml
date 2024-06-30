@@ -1,0 +1,10 @@
+name: GetInfo
+version: 0.0
+main: com.bubbamc.GetInfo
+author: Jason
+description: Get info about a block
+
+commands:
+    info:
+        usage: /<command>
+        description: gives you info wand
