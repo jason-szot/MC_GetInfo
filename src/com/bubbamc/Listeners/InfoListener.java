@@ -1,4 +1,4 @@
-package com.bubbamc;
+package com.bubbamc.Listeners;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -7,6 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
+
+import com.bubbamc.BlockTypeInfo.SpawnerBlockInfo;
 
 public class InfoListener implements Listener{
 
@@ -21,6 +23,10 @@ public class InfoListener implements Listener{
 		
 		if (p.getItemInHand().getType() == Material.STICK && event.getClickedBlock() != null) {
 			Block target = event.getClickedBlock();
+			if (target.getType().equals(Material.SPAWNER)) {
+				SpawnerBlockInfo msg = new SpawnerBlockInfo(target);
+				p.sendMessage(msg.info);
+			}
 			messageInfo(p, target);
 		}else return;
 	}

@@ -12,10 +12,16 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.bubbamc.Listeners.BlockPlaceListener;
+import com.bubbamc.Listeners.InfoListener;
+import com.bubbamc.Listeners.InventoryShuffleListener;
+
 public class GetInfo extends JavaPlugin{
 	
 	public void onEnable() {
 		Bukkit.getServer().getPluginManager().registerEvents(new InfoListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new BlockPlaceListener(), this);
+		Bukkit.getServer().getPluginManager().registerEvents(new InventoryShuffleListener(), this);
 		Bukkit.getServer().getLogger().info("Get Info v" + this.getDescription().getVersion() + " enabled!");
 	}
 	
