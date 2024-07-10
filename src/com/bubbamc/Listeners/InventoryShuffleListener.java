@@ -20,7 +20,6 @@ public class InventoryShuffleListener implements Listener{
 	public void onInventoryMove(InventoryMoveItemEvent e) {
 		
 		ItemStack item = e.getItem();
-		
 		Inventory moveFrom = e.getSource();
 		Inventory moveTo = e.getDestination();
 		Inventory init = e.getInitiator();
